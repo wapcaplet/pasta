@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Live edit</title>
+  <style type="text/css" media="screen">
+    .ace {
+      position: relative !important;
+      width: 300px;
+      height: 500px;
+      border: 1px solid grey;
+      float: left;
+      margin: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ace" id="ace1">Ace1</div>
+  <div class="ace" id="ace2">Ace2</div>
+
+  <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var editor1 = ace.edit("ace1");
+      var editor2 = ace.edit("ace2");
+    });
+  </script>
+</body>
+</html>
+
+
