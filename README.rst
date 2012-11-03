@@ -28,3 +28,21 @@ proper web server running.
 
 .. _dogfooding: http://en.wikipedia.org/wiki/Eating_your_own_dog_food
 .. _Inventing on Principle: http://www.youtube.com/watch?v=PUv66718DII
+
+
+Immediate plans
+---------------
+
+- Proper load/save of files from disk into the editor
+- Render on pause between keystrokes, rather than on each keystroke
+- Render async so editing is not interrupted while render is generated
+- Allow customizing editor language, keybinding, theme etc.
+
+
+License
+-------
+
+`MIT License`_.
+
+.. _MIT License: http://opensource.org/licenses/MIT
+
