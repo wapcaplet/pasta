@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Test doc</title>
+  <style type="text/css" media="screen">
+    table {
+      border: 2px solid blue;
+      -webkit-box-shadow: 6px 6px 5px 5px #777;
+    }
+    th {
+      background: #bdf;
+      padding: 3px;
+    }
+    ol {
+      list-style-type: lower-alpha;
+    }
+    .highlight {
+      background: #ff9;
+    }
+    .glow {
+      text-shadow: 0 0 8px #0f6;
+    }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      //$("h1").html("Stuffness");
+      $("h1").addClass("glow");
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Stuff</h1>
+  <p>And things</p>
+
+  <h2>Todo</h2>
+
+  <ol>
+    <li>Eat breakfast</li>
+    <li>Drink coffee</li>
+    <li>Have lunch</li>
+    <li>More coffee</li>
+  </ol>
+
+  <table>
+    <tr>
+      <th>Breakfast</th>
+      <td>bacon, eggs, pancakes</td>
+    </tr>
+    <tr>
+      <th>Lunch</th>
+      <td>sandwich, chips</td>
+    </tr>
+    <tr>
+      <th>Dinner</th>
+      <td>steak, potatoes, rolls</td>
+    </tr>
+  </table>
+</body>
+</html>
