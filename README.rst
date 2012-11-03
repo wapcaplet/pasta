@@ -24,7 +24,8 @@ For now, you can run the editor locally like this::
 Then load http://localhost:8000/edit.html in your browser. You should see a
 two-panel editor, and you should be able to load any files that already exist in
 the ``editor`` directory. Files outside this directory won't work until we get a
-proper web server running.
+proper web server running. Try loading ``test.html`` or ``float.html`` for
+example.
 
 .. _dogfooding: http://en.wikipedia.org/wiki/Eating_your_own_dog_food
 .. _Inventing on Principle: http://www.youtube.com/watch?v=PUv66718DII
