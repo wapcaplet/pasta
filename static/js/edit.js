@@ -48,20 +48,15 @@ function initialize_editor(div_id) {
     view(editor.getValue());
   });
 
-  $("#filename").change(function() {
-    var filename = $(this).val().replace(/C:\\fakepath\\/i, 'http://localhost:8000/');
-    $.get(filename, function(data) {
-      editor.setValue(data, -1);
-    });
+  $("#import_file").change(function() {
+    function populate_editor(responseText, statusText, xhr, $form) {
+      editor.setValue(responseText, -1);
+    }
+    $("#import_form").ajaxSubmit({success: populate_editor});
   });
 }
 
-// FIXME: Ugly... Just want to load some external JS files
-loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", function() {
-  $(document).ready(function() {
-    loadScript("http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js", function() {
-      initialize_editor("ace");
-    });
-  });
+$(document).ready(function() {
+  initialize_editor("ace");
 });
 
