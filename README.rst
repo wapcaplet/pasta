@@ -47,7 +47,7 @@ As of this moment, Pasta is using the Flask_ microframework for its webserver,
 and the Jinja_ templating language for HTML files. The embedded code editor is
 ACE_, and we may be using `Raphaël`_ for graphic rendering.
 
-Important directories::
+Important directories:
 
 - ``templates``: Jinja HTML templates
 - ``static``: CSS and Javascript files
