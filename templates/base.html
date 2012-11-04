@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %} - Pasta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pasta.css') }}" type="text/css" media="screen" />
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>
+
