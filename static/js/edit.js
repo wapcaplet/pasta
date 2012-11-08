@@ -44,9 +44,31 @@ function initialize_editor(div_id) {
   var session = editor.getSession();
   session.setMode("ace/mode/html");
 
+  // Does editor need refreshing?
+  var need_refresh = false;
+  // How long (in ms) to wait between refreshes, at minimum
+  var refresh_interval = 500;
+  // Don't refresh if changes occur in rapid succession
+  var ignore_threshold = 200;
+
+  // Track timestamp of the last change made in the editor
+  var last_change = new Date().getTime();
   session.on('change', function(e) {
-    view(editor.getValue());
+    last_changed = new Date().getTime();
+    need_refresh = true;
   });
+
+  // At regular intervals, check for changes and refresh the view
+  window.setInterval(function() {
+    var now = new Date().getTime();
+    // If last keystroke was a while ago, and editor has changed, refresh
+    if (now - last_changed > ignore_threshold && need_refresh) {
+      view(editor.getValue());
+      need_refresh = false;
+    }
+    // Otherwise, either the last change was too recent, or the
+    // last change has already been refreshed
+  }, refresh_interval);
 
   $("#import_file").change(function() {
     function populate_editor(responseText, statusText, xhr, $form) {
