@@ -52,7 +52,7 @@ function initialize_editor(div_id) {
   var ignore_threshold = 200;
 
   // Track timestamp of the last change made in the editor
-  var last_change = new Date().getTime();
+  var last_changed = new Date().getTime();
   session.on('change', function(e) {
     last_changed = new Date().getTime();
     need_refresh = true;
