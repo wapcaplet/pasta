@@ -76,9 +76,12 @@ function initialize_editor(div_id) {
     }
     $("#import_form").ajaxSubmit({success: populate_editor});
   });
+
+  $("#editor").draggable({handle: "#editor_handle"});
 }
 
 $(document).ready(function() {
   initialize_editor("ace");
+  $("#editor").resizable();
 });
 
