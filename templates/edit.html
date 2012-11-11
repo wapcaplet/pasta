@@ -7,12 +7,16 @@
 {% endblock %}
 
 {% block content %}
-  <div id="editor" class="panel">
-    <h2 class="handle">Edit</h2>
-    <form action="/import" method="post" enctype="multipart/form-data">
-      <input id="import_file" name="import_file" type="file" />
-    </form>
-    <div id="ace" class="ace"></div>
+  <div id="board">
+    <div id="editor" class="panel ui-widget-content">
+      <div class="toolbar">
+        <h2 class="handle">Edit</h2>
+        <form action="/import" method="post" enctype="multipart/form-data">
+          <input id="import_file" name="import_file" type="file" />
+        </form>
+      </div>
+      <div id="ace" class="ace"></div>
+    </div>
   </div>
 
   <div id="viewer" class="viewer">

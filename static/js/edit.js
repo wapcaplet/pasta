@@ -77,7 +77,11 @@ function initialize_editor(div_id) {
     $("#editor form").ajaxSubmit({success: populate_editor});
   });
 
-  $("#editor").draggable({cancel: ".ace"});
+  $("#editor").draggable({cancel: ".ace", containment: "#board"});
+  $("#editor").resizable();
+  $("#editor").resize(function() {
+    editor.resize();
+  });
 }
 
 $(document).ready(function() {

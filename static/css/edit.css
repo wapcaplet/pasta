@@ -1,14 +1,29 @@
 .panel {
+  position: relative !important;
   border: 1px solid #000;
   float: left;
-  background: white;
-  -webkit-box-shadow: 2px 2px 2px 2px #777;
-}
-.ace {
-  position: relative !important;
   width: 400px;
-  height: 600px;
-  border: 1px solid grey;
+  height: 400px;
+  background: white;
+}
+
+.toolbar {
+}
+
+.ace {
+  /*
+  position: relative !important;
+  height: 100%;
+  width: 100%;
+  */
+  position: absolute;
+  top: 4em;
+  left: 0;
+  right: 0;
+  bottom: 1.5em;
+  border-color: #888;
+  border-style: solid;
+  border-width: 1px 0;
 }
 .handle {
   background: #ccc;
@@ -19,6 +34,14 @@
 }
 .handle:hover {
   cursor: move;
+}
+
+#board {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  left: 0;
 }
 
 .viewer {
