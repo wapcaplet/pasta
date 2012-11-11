@@ -7,15 +7,15 @@
 {% endblock %}
 
 {% block content %}
-  <div id="editor">
-    <div id="editor_handle">&nbsp;</div>
-    <form id="import_form" action="/import" method="post" enctype="multipart/form-data">
+  <div id="editor" class="panel">
+    <h2 class="handle">Edit</h2>
+    <form action="/import" method="post" enctype="multipart/form-data">
       <input id="import_file" name="import_file" type="file" />
     </form>
-    <div id="ace"></div>
+    <div id="ace" class="ace"></div>
   </div>
 
-  <div id="viewer">
+  <div id="viewer" class="viewer">
     <iframe></iframe>
   </div>
 

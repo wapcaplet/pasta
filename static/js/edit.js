@@ -70,14 +70,14 @@ function initialize_editor(div_id) {
     // last change has already been refreshed
   }, refresh_interval);
 
-  $("#import_file").change(function() {
+  $('#editor input[name="import_file"]').change(function() {
     function populate_editor(responseText, statusText, xhr, $form) {
       editor.setValue(responseText, -1);
     }
-    $("#import_form").ajaxSubmit({success: populate_editor});
+    $("#editor form").ajaxSubmit({success: populate_editor});
   });
 
-  $("#editor").draggable({handle: "#editor_handle"});
+  $("#editor").draggable({cancel: ".ace"});
 }
 
 $(document).ready(function() {

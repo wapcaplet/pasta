@@ -1,37 +1,34 @@
-/*
-#viewer, #editor {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-}
-#editor {
-  left: 0;
-  right: 50%;
-}
-*/
-#editor {
-  border: 2px solid grey;
+.panel {
+  border: 1px solid #000;
   float: left;
   background: white;
+  -webkit-box-shadow: 2px 2px 2px 2px #777;
 }
-#ace {
+.ace {
   position: relative !important;
   width: 400px;
   height: 600px;
   border: 1px solid grey;
 }
-#editor_handle {
-  background: grey;
+.handle {
+  background: #ccc;
+  padding: 2px 4px;
+  border-bottom: 1px solid grey;
+  margin: 0;
+  font-size: 1em;
+}
+.handle:hover {
+  cursor: move;
 }
 
-#viewer {
+.viewer {
   position: absolute;
   top: 0;
   left: 50%;
   bottom: 0;
   right: 0;
 }
-#viewer iframe {
+.viewer iframe {
   width: 100%;
   height: 100%;
 }
