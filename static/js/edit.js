@@ -15,7 +15,7 @@ function new_editor(div) {
   ace_number += 1;
 
   // Create a div for ACE to use
-  var ace_div = $("<div></div>");
+  var ace_div = $("<div/>");
   ace_div.attr("id", ace_id);
   ace_div.attr("class", 'ace');
   ace_div.appendTo(div);
@@ -65,11 +65,42 @@ function attach_viewer(editor, viewer_id) {
   return false;
 }
 
+function add_toolbar(div) {
+  var toolbar = $('<div/>');
+  var header = $('<h2>Edit</h2>');
+  var form = $('<form/>');
+
+  header.addClass('handle');
+
+  form.attr('action', '/import');
+  form.attr('method', 'post');
+  form.attr('enctype', 'multipart/form-data');
+
+  var import_button = $('<input/>');
+  import_button.attr('id', 'import_file');
+  import_button.attr('name', 'import_file');
+  import_button.attr('type', 'file');
+
+  form.append(import_button);
+
+  toolbar.append(header);
+  toolbar.append(form);
+
+  $(div).prepend(toolbar);
+}
+
+// Add appropriate CSS classes to the given editor div
+function add_classes(div) {
+  $(div).addClass('panel');
+  $(div).addClass('ui-widget-content');
+}
 
 // Make the given div element into an ACE editor
 // TODO: Refactor
 function make_editor(div) {
   editor = new_editor(div);
+  add_toolbar(div);
+  add_classes(div);
 
   attach_viewer(editor, "viewer");
 
